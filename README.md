@@ -1,4 +1,4 @@
-# WebDevProject-Backend
+# E-commerce Webdev Project
 
 > This project is an e-commerce website built from scratch using the MERN stack (MongoDB, Express, React (still to be integrated), and Node.js). Our team of 5 dedicated students collaborated to develop a robust and user-friendly platform for online shopping. With a focus on delivering a seamless shopping experience, we incorporated various features and functionalities to meet the needs of both customers and administrators. We take pride in presenting this website, which emphasizes functionality while keeping design enhancements on the horizon.
 

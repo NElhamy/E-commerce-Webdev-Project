@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <%- include('./partials/head.ejs') %>
+    <title><%= prd.name %></title>
+    <link rel="stylesheet" type="text/css" href="../CSS/header.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/footer.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/ProductDetails.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="topNav">
+            <%- include('./partials/header.ejs') %>
+        </div>
+
+        <!-- need attribution (credits) for account icon in footer -->
+        <!-- <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik - Flaticon</a> -->
+        <!-- changed photo and got it from logomakr.com -->
+
+        <div id="biggerContainer">
+            <div id="bodyContainer">
+                <div class="row">
+                    <div class="left section">
+                        <div class="big-img">
+                            <img src="../Images/Products/<%= prd.images[0]%>">
+                        </div>
+                        <div class="images">
+                            <div class="small-images">
+                                <img src="../Images/Products/<%= prd.images[0]%>" onclick="showImg(this.src)">
+                            </div>
+                            <div class="small-images">
+                                <img src="../Images/Products/<%= prd.images[1]%>" onclick="showImg(this.src)">
+                            </div>
+                            <div class="small-images">
+                                <img src="../Images/Products/<%= prd.images[2]%>" onclick="showImg(this.src)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right column">
+                        <div class="section">
+                            <div class="pname"><%= prd.name%></div>
+                            <div class="price"><%= prd.price %> EGP</div>
+                            <div class="quantity">
+                                <p>Quantity :</p>
+                                <input type="number" min="1" max="5" value="1">
+                            </div>
+                            <div class="btns">
+                                <button class="cart-btn" onclick="addTocart('<%= prd._id%>')">Add to cart </button>
+                                <button class="Fav-btn" onclick = "addToWishlist('<%= prd._id%>')">Add to wishlist </button>
+                            </div>
+                        </div>
+                        <div class="section" id = "description">
+                            <div class="pname">Description:</div>
+                            <p>
+                                <%= prd.description%>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+            <footer class="footer">
+                <%- include('./partials/footer.ejs') %>
+            </footer>
+        </div>
+
+</body>
+<script src="../JS/productsDetailsbtn.js"></script>
+<script>
+    let bigImg = document.querySelector('.big-img img')
+    function showImg(pic) {
+        bigImg.src = pic;
+    }
+</script>
+<script src="../JS/header.js"></script>
+</html>

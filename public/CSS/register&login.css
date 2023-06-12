@@ -1,0 +1,370 @@
+/* COMMON STUFF */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0px;
+    overflow: hidden;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 10%;
+}
+
+#biggerContainer {
+    overflow-y: scroll;
+    height: 94.5%;
+    margin: 0px;
+    /* margin-top: 70px; */
+    padding: 0px;
+    bottom: 0px;
+}
+
+.bodyContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+form input,
+.button {
+    padding: 5px;
+    border: none;
+}
+
+.button {
+    width: 90%;
+}
+
+button {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+}
+
+button:hover {
+    color: #e8e8e8;
+}
+
+button:hover::before {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/*first group only */
+.group:first-child {
+    margin-top: 10%;
+}
+.group {
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 0%;
+    width: 100%;
+}
+
+.input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    border: none;
+    width:100%;
+    background: transparent;
+}
+
+.input:focus {
+    outline: none;
+}
+
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    top: -20px;
+    font-size: 14px;
+    transition: 0.5s ease all;
+    transition: 0.5s ease all;
+    -moz-transition: 0.5s ease all;
+    -webkit-transition: 0.5s ease all;
+}
+
+.input:focus~label, .input:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264AE;
+    transition: 0.5s ease all;
+}
+
+.input:invalid~label {
+    top: -20px;
+    font-size: 14px;
+    color: #999;
+    transition: 0.5s ease all;
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+    content: '';
+    height: 2px;
+    margin-bottom: 1%;
+    /* width: 0; */
+    bottom: 0px;
+    position: absolute;
+    transition: 0.5s ease all;
+    -moz-transition: 0.5s ease all;
+    -webkit-transition: 0.5s ease all;
+}
+
+.input:valid~.bar {
+    background: #5264AE;
+}
+
+.input:invalid~.bar {
+    background: #999;
+}
+
+.bar::before {
+    left: 50%;
+}
+
+.bar::after {
+    right: 50%;
+}
+
+.bar::before,
+.bar::after {
+    width: 50%;
+}
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    bottom: 7px;
+}
+
+.input:focus~.highlight {
+    animation: inputHighlighter 0.4s ease;
+}
+
+
+/* ////////////////////////////////////////////////// */
+
+/* LOGIN PAGE STUFF */
+
+.formsContainer {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#login,
+#register {
+    display: flex;
+    flex-direction: column;
+    min-height: fit-content;
+    min-width: fit-content;
+    padding: 10px;
+    height: 100%;
+    margin: 50px;
+}
+
+/* ////////////////////////////////////////////////////// */
+/* REGISTER PAGE STUFF */
+
+.register {
+    display: inherit;
+    flex-direction: inherit;
+    width: max-content;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.register form {
+    display: inherit;
+    flex-direction: inherit;
+    align-items: center;
+    width: 300px;
+}
+
+.register button,
+.register a {
+    width: 100%;
+    padding: 10px;
+    transition: all 250ms;
+    margin-bottom: 10px;
+}
+
+.register button {
+    padding: 10px;
+}
+
+
+.register #submit {
+    color: #e8e8e8;
+    border: 2px solid #212121;
+    ;
+    background-color: #212121;
+}
+
+.register #submit:hover {
+    border: 5px solid #212121;
+    transition: ease all 75ms;
+}
+
+
+@keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@media (min-width:600px) {
+    #biggerContainer {
+        margin-top: 70px;
+    }
+}
+
+@media (max-width:600px) {
+    #biggerContainer {
+        bottom: 10px;
+        position: fixed;
+        top: 60px;
+
+    }
+
+    /* login stuff */
+    .formsContainer {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #login form {
+        align-items: center;
+    }
+
+    #login,
+    #register {
+        margin: 10px;
+    }
+
+    /* register stuff */
+
+    .register {
+        margin-top: 0px;
+    }
+
+
+}
+.errorMsg {
+    display: block;
+    color: red;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 11px;
+}
+
+form > span {
+    text-align: center; 
+    margin-top: 10px;
+    color:green;
+    font-size: 20px;
+    visibility: hidden;
+}
+
+#error-div {
+    margin: 4% 0 10% 0;
+}
+
+.dark form input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+
+.dark .group label {
+    color: #515151;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    top: -20px;
+    font-size: 14px;
+    transition: 0.5s ease all;
+    transition: 0.5s ease all;
+    -moz-transition: 0.5s ease all;
+    -webkit-transition: 0.5s ease all;
+}
+
+.dark .input:focus~label, .dark .input:valid~label {
+    color: #1596ff;
+}
+
+.dark .input:valid~.bar {
+    background:  #1596ff;
+}

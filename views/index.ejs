@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <%- include('./partials/head.ejs') %>
+    <title>Pixii</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/footer.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/homepage.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/header.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="topNav">
+            <%- include('./partials/header.ejs') %>
+        </div>
+
+        <div id="biggerContainer">
+            <div id="bodyContainer">
+                <img class="mySlides" src="../Images/Homepage/image1.webp">
+                <img class="mySlides" src="../Images/Homepage/slideshow1.jpg" style = "display:none">
+                <img class="mySlides" src="../Images/Homepage/image.webp" style = "display:none">
+                <img class="mySlides" src="../Images/Homepage/slideshow3.jpg" style = "display:none">
+                
+                <div class="containerXX">
+
+                    <div class="containerx" onclick="window.location.href='/products?query=women+bags&page=0'">
+                        <img src="../Images/Homepage/bag.jpg" alt="Avatar" class="image" >
+                        <div class="overlay">
+                            <div class="text">Bags</div>
+                        </div>
+                    </div>
+                    
+                    <div class="containerx" onclick="window.location.href='/products?query=women+shoes&page=0'">
+                        <img src="../Images/Homepage/shoes.jpg" alt="Avatar" class="image" >
+                        <div class="overlay">
+                            <div class="text">Shoes</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class = "containerXX">
+
+                    <div class="containerx" onclick = "window.location.href = '/products?query=man+bags&page=0'">
+                        <img src="../Images/Homepage/male_bag.jpg" alt="Avatar" class="image" > 
+                         <div class="overlay">
+                             <div class="text">Bags</div>
+                         </div>
+                     </div>
+
+                    <div class="containerx" onclick = "window.location.href='/products?query=man+shoes&page=0'">
+                        <img src="../Images/Homepage/male_shoes.jpg" alt="Avatar" class="image" >
+                        <div class="overlay">
+                            <div class="text">Shoes</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <footer class = "footer">
+                <%- include('./partials/footer.ejs') %>
+            </footer>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    var myIndex = 0;
+    function slider() {
+        var images = document.getElementsByClassName("mySlides");
+        for (var i = 0; i < images.length; i++)
+            images[i].style.display = "none";
+        if (myIndex > images.length - 1)
+            myIndex = 0;
+        images[myIndex].style.display = "block";
+        myIndex++;
+        setTimeout(slider, 2000);
+    }
+    slider();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script src="../JS/header.js"></script>
+
+</html>

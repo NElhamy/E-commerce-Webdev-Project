@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <%- include('./partials/head.ejs') %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in</title>
+
+    <link rel="stylesheet" type="text/css" href="../CSS/footer.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/header.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/register&login.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="topNav"><%- include('./partials/header.ejs') %></div>
+      <div id="biggerContainer">
+        <div class="bodyContainer">
+          <h1>Log in</h1>
+          <div class="formsContainer">
+            <div id="login">
+              <h3>Log in</h3>
+              <form method="post" id="form" action="/login">
+                <div class="group">
+                  <input type="text" name="email" id="Email" class="input" />
+                  <label>Email</label>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                </div>
+                <div id="error-div">
+                  <span class="errorMsg" id="emailErrorMsg">
+                    <%if( errorMsg && errorMsg.email) { %> <%=errorMsg.email%>
+                    <%}%>
+                  </span>
+                </div>
+
+                <div class="group">
+                  <input
+                    type="password"
+                    id="Password"
+                    name="password"
+                    class="input"
+                  />
+                  <label>Password</label>
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                </div>
+
+                <div id="error-div">
+                  <span class="errorMsg" id="passwordErrorMsg">
+                    <% if(errorMsg && errorMsg.password) { %>
+                    <%=errorMsg.password%> <%} %>
+                  </span>
+                </div>
+
+                <div>
+                  <button id="submit" type="submit">LOG IN</button>
+                </div>
+              </form>
+            </div>
+            <div id="register">
+              <h3>New Customer?</h3>
+              <a href="/register"><button>REGISTER</button></a>
+            </div>
+          </div>
+
+          <footer class="footer">
+            <%- include('./partials/footer.ejs') %>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <!-- need attribution (credits) for account icon in footer -->
+    <!-- <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik - Flaticon</a> -->
+    <!-- changed photo and got it from logomakr.com -->
+  </body>
+
+  <script src="../JS/header.js"></script>
+  <script src="../JS/loginvalid.js"></script>
+</html>

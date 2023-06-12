@@ -1,0 +1,125 @@
+:root {
+    --body-font-color: #232527;
+    --navBar-hover-color: rgb(51, 55, 57);
+    /* --bg-color:#d5cfc9; */
+    --bg-color: #f2f2f6;
+    /* #bab4ad */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,body {
+    height:100%;
+    width:100%;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html,body,#topNav,#bodyContainer {
+    width:100vw;
+}
+
+body {
+  overflow: hidden;
+}
+
+#bodyContainer {
+    margin: 0px;
+    display: flex;
+    overflow: hidden;
+}
+
+#container {
+    height:100%;
+    width:100%;
+    /* background-color: var(--bg-color); */
+    color: var(--body-font-color);
+    /* padding-top:60px; */
+    overflow-y:auto;
+}
+
+.only-one {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f6;
+    padding:100px;
+    padding-top:0px;
+    border: 1px solid black;
+    height:100%;
+    overflow-y: scroll;
+}
+
+.smallContainer {
+    /* background-color: rgb(51, 55, 57,0.5); */
+    /* background: #fff; */
+    border-radius: 10px;
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom:30px;
+    min-width: fit-content;
+}
+
+body {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+table {
+    background: #fff;
+    width: 100%;
+    border-radius: 2rem;
+    padding: 1.8rem;
+    text-align: center;
+    box-shadow: 0 2rem 3rem rgba(48, 49, 53, 0.3);
+    transition: all 300ms ease;
+}
+
+table:hover {
+    box-shadow: none;
+}
+
+table tbody td {
+    border: none;
+    height: 2.8rem;
+    border-bottom: 1px solid #7d8da1;
+    color: #677483;
+}
+
+table tbody tr:last-child td{
+    border: none;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height:15px;
+  }
+  
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  @media (max-width:600px) {
+      .only-one {
+        padding:20px;
+        padding-bottom:100px;
+      }
+  }

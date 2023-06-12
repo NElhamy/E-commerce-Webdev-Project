@@ -1,0 +1,97 @@
+#products table {
+    display: flex;
+    flex-direction: column;
+}
+
+#products th,td {
+    padding:5px;
+    width: 15vw;
+}
+
+#products img {
+    height:50px;
+    width: 50px;
+    border-radius: 10px;
+}
+
+#products button {
+    font:inherit;
+    border:0px;
+    border-radius:10px;
+    background-color:rgb(182, 187, 191) ;
+    padding:10px;
+    box-shadow: 0 1rem 2rem rgba(48, 49, 53, 0.5);
+
+    transition: ease all 300ms;
+}
+
+#products button:hover {
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.pagination div {
+    margin: 30px 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: rgb(182, 187, 191);
+    box-shadow: 0 1rem 2rem rgba(48, 49, 53, 0.5);
+    transition: ease all 300ms;
+}
+
+.pagination div:hover {
+    box-shadow: none;
+}
+
+.pagination .currentPage {
+    background-color: rgb(51, 55, 57);
+    box-shadow: none;
+}
+
+.pagination .currentPage a {
+    color:rgb(182, 187, 191);
+}
+
+.search-div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#search-img {
+    height: 2.7vh;
+}
+
+@media (max-width: 600px) {
+
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding:10px;
+    }
+
+    .valueToCopy {
+        display:none;
+    }
+
+    td {
+        margin:0px;
+    }
+
+    .buttons button {
+       width:20vw;
+    }
+}

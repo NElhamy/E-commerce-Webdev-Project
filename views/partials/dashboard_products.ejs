@@ -1,0 +1,73 @@
+<div id="products" class="only-one">
+    <h1>Products</h1>
+
+    <div class="smallContainer buttons" style="width:fit-content">
+        <button onclick="HideOverlay();ShowForm('product-form-overlay')">
+            <h4>Add Product</h4>
+        </button>
+        <button onclick="HideOverlay();ShowForm('edit-product-overlay')">
+            <h4>Edit Product</h4>
+        </button>
+        <button onclick="HideOverlay();ShowForm('delete-product-overlay')">
+            <h4>Delete Product</h4>
+        </button>
+        <button onclick="HideOverlay();ShowForm('filter-form-overlay')">
+            <h4>Filter Products</h4>
+        </button>
+    </div>
+    
+    <div class="smallContainer" style="margin: 0;">
+        <div class="search-div">
+            <span class="searchSpan">
+                <input class="search-box" type="search" placeholder="Search">
+            </span>
+            <span>
+                <input id="search-img" type="image" src="../Images/Icons/search.png" onclick = "searchProducts()">
+            </span>
+        </div>
+    </div>
+
+    <div class="smallContainer">
+        <h4>All Products</h4>
+        <table id = "productsTable">
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>ID</th>
+            </tr>
+            <% products.forEach(product=> { %>
+                <tr>
+                    <td>
+                        <img src="../../Images/Products/<%=product.images[0]%>" onclick = "window.location.href = '/products/<%= product.objectID%>'" style="cursor:pointer;">
+                    </td>
+                    <td>
+                        <%= product.name %>
+                    </td>
+                    <td>
+                        <%= product.price %>
+                    </td>
+                    <td>
+                        <%= product.stock %>
+                    </td>
+                    <td class="valueToCopy">
+                        <%= product.objectID %>
+                    </td>
+                    <td>
+                        <button onclick="copyToClipboard(this,'valueToCopy')"><img src="../../Images/Dashboard/copy.png"
+                                style="width:20px;height:20px;"></button>
+                    </td>
+                </tr>
+                <% }) %>
+        </table>
+        <div class="pagination">
+            <% if ( products.length != 0 && totalPages > 1) { %>
+            <% for (let i = 0;i<totalPages;i++) {%>
+                <div onclick = "changePage('<%=i%>')"><a href="#"><%= i+1 %></a></div>
+                <% } %>
+            <% }%>
+            
+    </div>
+    </div>
+</div>

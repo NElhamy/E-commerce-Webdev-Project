@@ -1,0 +1,110 @@
+<div id="edit-product-overlay" class="overlay-div">
+    <p id="edit-p">Enter ID to start editing</p>
+    <form id="editProductForm" method="post" action="/dashboard/products/editProduct" enctype="multipart/form-data">
+		<div class="form-item-div" id="productIDDiv">
+            <input id="productID" class="product-line-input" required name="productID" type="text">
+            <label>Product ID</label>
+            <span class="errorMsg" id="productIDError"><%= errorMsg && errorMsg.productID ? errorMsg.productID : '' %></span>
+        </div>
+
+        <div class="form-item-div">
+            <input id="productName" disabled class="product-line-input edit-input" required name="productName" type="text">
+            <label>Product Name</label>
+            <span class="errorMsg" id="productNameError"><%= errorMsg && errorMsg.productName ? errorMsg.productName : '' %></span>
+        </div>
+
+        <div class="form-item-div">
+            <input id="productPrice" disabled class="product-line-input edit-input" required name="productPrice" type="text">
+            <label>Product Price</label>
+            <span class="errorMsg" id="productPriceError"><%= errorMsg && errorMsg.productPrice ? errorMsg.productPrice : '' %></span>
+        </div>
+
+        <div class="form-item-div">
+            <textarea id="productDescription" disabled class="product-line-input product-form-textarea edit-input" name="productDescription" cols="40" rows="2" required></textarea>
+            <label id="product-description-label">Product Description</label>
+            <span class="errorMsg" id="productDescriptionError"><%= errorMsg && errorMsg.productDescription ? errorMsg.productDescription : '' %></span>
+        </div>
+
+        <div class="form-item-div">
+            <input id="productStock" disabled class="product-line-input edit-input" required name="productStock" type="text">
+            <span class="errorMsg" id="productStockError"><%= errorMsg && errorMsg.productStock ? errorMsg.productStock : '' %></span>
+            <label>Stock</label>
+        </div>
+
+        <div class="product-form-checkbox-div">
+            <div>
+                <label for="edit-men-checkbox">
+                    <input disabled id="edit-men-checkbox" class="product-form-checkbox edit-input" required name="productMen" type="checkbox">
+                    <span></span>
+                    Men
+                </label>
+            </div>
+
+            <div>
+                <label for="edit-women-checkbox">
+                    <input disabled id="edit-women-checkbox" class="product-form-checkbox edit-input" required name="productWomen" type="checkbox">
+                    <span></span>
+                    Women
+                </label>
+            </div>
+
+            <div>
+                <label for="edit-kids-checkbox">
+                    <input disabled id="edit-kids-checkbox" class="product-form-checkbox edit-input" required name="productKids" type="checkbox">
+                    <span></span>
+                    Kids
+                </label>
+            </div>
+        </div>
+
+        <div class = "form-item-div">
+            <span class="errorMsg" id="targetAudienceError" style = "display:block; color:red;"><%= errorMsg && errorMsg.targetAudience ? errorMsg.targetAudience : '' %></span>
+        </div>
+
+        <div class="product-form-checkbox-div">
+            <div>
+                <label for="edit-shoes-checkbox">
+                    <input disabled id="edit-shoes-checkbox" class="product-form-checkbox edit-input" required name="shoes" type="checkbox" onchange="toggleShoes()">
+                    <span></span>
+                    Shoes
+                </label>
+            </div>
+
+            <div>
+                <label for="edit-bags-checkbox">
+                    <input disabled id="edit-bags-checkbox" class="product-form-checkbox edit-input" required name="bags" type="checkbox" onchange="toggleBags()">
+                    <span></span>
+                    Bag
+                </label>
+            </div>
+        </div>
+
+        <div class = "form-item-div">
+            <span class="errorMsg" id="typeError" style = "display:block; color:red;"><%= errorMsg && errorMsg.typeError ? errorMsg.typeError : '' %></span>
+        </div>
+
+        <div class="form-item-div">
+            <input disabled name="images" class="product-line-input edit-input" id="product-upload-input" type="file" accept=".webp, .png, .jpeg, .jpg" multiple required>
+            <span class="errorMsg" id="productImageError"><%= errorMsg && errorMsg.image ? errorMsg.image : '' %></span>
+        </div>
+        
+
+        <a id="edit-button" onclick="submitCheckProductIDForm(this)">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Edit
+        </a>
+
+        <a id="save-button" onclick="submitEditProductForm(this)" style="display: none;">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Save
+        </a>
+        <span id="success-span" style="color: green; font-size: large;"></span>
+    </form>
+    <p id="cancel-form">Changed your mind? <a onclick="HideOverlay()" class="cancel-form">Cancel</a></p>
+</div>

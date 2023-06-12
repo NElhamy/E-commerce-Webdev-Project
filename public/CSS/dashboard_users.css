@@ -1,0 +1,94 @@
+.smallContainer:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+}
+
+.smallContainer:nth-of-type(1) button {
+    margin:10px;
+}
+
+/* .smallContainer:nth-of-type(1) button:nth-of-type(1) {
+    margin-left:0px;
+} */
+
+.smallContainer:nth-of-type(1) button {
+    margin-left:0px;
+}
+
+#users table {
+    display: flex;
+    flex-direction: column;
+}
+
+#users table th, td {
+    padding:5px;
+    width: 15vw;
+}
+
+#users table .options button {
+    font:inherit;
+    background-color: transparent;
+    border: 0px;
+    color:red;
+}
+
+#users button {
+    font:inherit;
+    border:0px;
+    border-radius:10px;
+    background-color:rgb(182, 187, 191) ;
+    padding:10px;
+    box-shadow: 0 1rem 2rem rgba(48, 49, 53, 0.5);
+    transition: ease all 300ms;
+}
+
+#users button:hover {
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.pagination .currentPage {
+    background-color: rgb(51, 55, 57);
+    box-shadow: none;
+}
+
+.pagination .currentPage a {
+    color:rgb(182, 187, 191);
+}
+
+
+@media (max-width: 600px) {
+
+    th,td {
+        width: unset;
+    }
+    table {
+        padding:5px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding:10px;
+    }
+
+    .buttons button {
+       width:20vw;
+    }
+}
+
+.search-div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#search-img {
+    height: 2.7vh;
+}

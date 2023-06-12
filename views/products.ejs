@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <%- include('./partials/head.ejs') %>
+    <title>Shopping</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/footer.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/products.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/overlay_form.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/header.css">
+    
+</head>
+
+<body>
+    <div id="container">
+        <div id="topNav">
+            <%- include('./partials/header.ejs') %>
+        </div>
+
+        <!-- need attribution (credits) for account icon in footer -->
+        <!-- <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik - Flaticon</a> -->
+        <!-- changed photo and got it from logomakr.com -->
+
+        <div id="biggerContainer">
+            <div id="bodyContainer">
+                <a id="redirect-home" onclick="window.location.href = '/'"><h1>Pixi</h1></a>
+                <p>Your Favourite Brand</p>
+
+                <button class="extraButton" onclick="HideOverlay();ShowForm('filter-form-overlay')">
+                    <h4>Filter Results</h4>
+                </button>
+
+                <div class="productsGrid">
+                    <% products.forEach(prd=> { %>
+                        <div class="product" onmouseenter="TogglePhoto(this);" onmouseleave="TogglePhoto(this);">
+                            <a href="/products/<%= prd.objectID %>">
+                                <img src="../Images/Products/<%= prd.images[0]%>">
+                                <img src="../Images/Products/<%= prd.images[1]%>" style="display: none;">
+                            </a>
+                            <span style="margin-top:auto">
+                                <%= prd.name %>
+                            </span>
+                            <span class="price">
+                                <%= prd.price %> EGP
+                            </span>
+                        </div>
+                        <% }) %>
+                </div>
+                <div class="pagination">
+                    <% if ( products.length != 0 && totalPages > 1) { %>
+                    <% for (let i = 0;i<totalPages;i++) {%>
+                        <div onclick = "changePage('<%=i%>')"><a href="#"><%= i+1 %></a></div>
+                        <% } %>
+                    <% } %>
+                    
+            </div>
+            </div>
+
+            <footer class="footer">
+                <%- include('./partials/footer.ejs') %>
+            </footer>
+        </div>
+        <%- include("./partials/product_filter_form.ejs"); %>
+</body>
+<script src="../JS/header.js"></script>
+<script src="../JS/products.js"></script>
+<script src="../JS/overlay.js"></script>
+
+</html>

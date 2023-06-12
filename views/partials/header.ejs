@@ -1,0 +1,56 @@
+<header class="row1">
+    <span>FREE SHIPPING FOR ORDERS ABOVE 500 EGP</span>
+</header>
+
+<div class="row1">
+    
+    <span class="menuIcon"><input class="navImg" type="image" src="../Images/Icons/menu.png" onclick="toggleMenu()">
+    </span>
+    <div id="google_translate_element"></div> 
+
+ <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script> 
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+   
+    <span class="menuIcon mode" onclick = "toggleDarkMode();">           
+        <span class = "change">🌙</span>
+    </span>
+
+
+    <span class="menuIcon" id="closeSearch" style="display: none;" onclick="toggleSearchBar(false)">
+        <img class="navImg" src="../Images/Icons/close.png">
+    </span>
+    <span class="searchSpan">
+        <input class="searchBox" type="search" placeholder="Search" style>
+    </span>
+    <span id="searchImg" class="menuIcon" onclick="toggleSearchBar(true);">
+        <input class="navImg" type="image" src="../Images/Icons/search.png">
+    </span>
+    <span class="menuIcon"><a href="/wishlist"><img class="navImg" src="../Images/Icons/heart.png"></a></span>
+    <span class="menuIcon"><a href="/cart"><img class="navImg" src="../Images/Icons/bag.png"></a></span>
+    <span class="menuIcon"><a id="account" href="/account"><img class="navImg"
+                src="../Images/Icons/account.png"></a></span>
+
+    <% if (admin && admin==true) { %>
+        <%= console.log(admin) %>
+        <span class="menuIcon"><a href="/dashboard"><img class="navImg" src="../Images/Icons/dashboard.png"></a></span>
+        <% } %>
+        
+</div>
+<div class="row2">
+    <a class="menuItem" href="/">Home</a>
+    <a class="menuItem" href="/products?page=0">Products</a>
+    <a class="menuItem" href="/products?query=men&page=0">Men</a>
+    <a class="menuItem" href="/products?query=women&page=0">Women</a>
+    <a class="menuItem" href="/products?query=kids&page=0">Kids</a>
+    <a class="menuItem" href="/products?query=shoes&page=0">Shoes</a>
+    <a class="menuItem" href="/products?query=bags&page=0">Bags</a>
+</div>

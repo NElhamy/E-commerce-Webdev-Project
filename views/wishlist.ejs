@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+    <title>Wishlist</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/footer.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/wishlist.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/header.css">
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="topNav">
+            <%- include('./partials/header.ejs') %>
+        </div>
+
+        <div id="biggerContainer">
+            <div id="bodyContainer">
+                <div class="shopping-cart">
+                    <h1 class="title">Wishlist</h1>
+                    <% if(products.length==0) {%>
+                        <div class="item">
+                            <h2>No items in your wishlist</h2>
+                        </div>
+                        <a href="/products" id="continue-shopping">Continue Shopping</a>
+                        
+                        <% }%>
+                            <% products.forEach(prd=> { %>
+                                <div class="item">
+                                    <div class="buttons">
+                                        <button class="delete-btn" type="button" name="button"
+                                            onclick="RemoveWishlist('<%= prd._id%>')">
+                                            <img src="../Images/Icons/delete.png" alt="">
+                                        </button>
+                                    </div>
+
+                                    <img id="product-image" src="../Images/Products/<%= prd.images[0]%>" alt="" onclick="window.location.href = '/products/<%= prd._id%>'">
+
+                                    <div class="description">
+                                        <span class="item-found" onclick="window.location.href = '/products/<%= prd._id%>'">
+                                            <%= prd.name %>
+                                        </span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+
+                                    <div class="total-price">
+                                        <%= prd.price %>
+                                    </div>
+                                </div>
+                                <% }) %>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <%- include('./partials/footer.ejs') %>
+            </footer>
+        </div>
+    </div>
+</body>
+<script src="../JS/header.js"></script>
+<script src="../JS/Removeproducts.js"></script>
+
+</html>

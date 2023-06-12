@@ -1,4 +1,4 @@
-# WebDevProject-Backend
+# E-commerce Webdev Project
 
 > This project is an e-commerce website built from scratch using the MERN stack (MongoDB, Express, React (still to be integrated), and Node.js). Our team of 5 dedicated students collaborated to develop a robust and user-friendly platform for online shopping. With a focus on delivering a seamless shopping experience, we incorporated various features and functionalities to meet the needs of both customers and administrators. We take pride in presenting this website, which emphasizes functionality while keeping design enhancements on the horizon.
 
@@ -30,8 +30,8 @@ This repository contains the source code and files for an e-commerce website bui
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/WebDevProject-Backend.git`
-2. Navigate to the project directory: `cd WebDevProject-Backend`
+1. Clone the repository: `git clone https://github.com/your-username/E-commerce-Webdev-Project.git`
+2. Navigate to the project directory: `cd E-commerce-Webdev-Project`
 3. Install the dependencies: `npm install` / `npm i`
 
 ## Usage

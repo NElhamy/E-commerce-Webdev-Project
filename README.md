@@ -30,7 +30,7 @@ This repository contains the source code and files for an e-commerce website bui
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/WebDevProject-Backend.git`
+1. Clone the repository: `git clone https://github.com/your-username/E-commerce-Webdev-Project.git`
 2. Navigate to the project directory: `cd WebDevProject-Backend`
 3. Install the dependencies: `npm install` / `npm i`
 
